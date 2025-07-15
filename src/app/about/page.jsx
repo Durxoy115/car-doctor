@@ -1,4 +1,5 @@
 import React from "react";
+import JoinTeamSection from "../JoinTeamSection";
 
 export default function About() {
   return (
@@ -64,6 +65,7 @@ export default function About() {
             ))}
         </div>
     </div>
+    <JoinTeamSection />
     </div>
   );
 }

@@ -36,7 +36,7 @@ export default function NavBar() {
     );
   };
   return (
-    <div className="navbar  shadow-sm sm:px-1 md:px-8 lg:px-10 bg-blue-400">
+    <div className="navbar  shadow-sm sm:px-1 md:px-8 lg:px-10 text-white font-medium" style={{backgroundColor:"#081547"}}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
