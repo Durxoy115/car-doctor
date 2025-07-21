@@ -160,7 +160,10 @@ export default function Services() {
         }
     ]
   return (
-    <div className='grid grid-cols-12'>
+   <div className='mt-8 px-1 md:px-16'>
+    <p className='text-blue-600 text-center'>Our Services</p>
+    <h1 className='font-bold text-2xl text-center'>The Best Experience With Our Services</h1>
+     <div className='grid grid-cols-12'>
       {
         data.map((service) => (
             <div key={service._id} className='col-span-12 md:col-span-6 lg:col-span-3 p-4'>
@@ -189,5 +192,6 @@ export default function Services() {
         ))
       }
     </div>
+   </div>
   )
 }
