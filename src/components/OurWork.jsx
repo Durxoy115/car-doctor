@@ -46,46 +46,47 @@ export default function OurWork() {
   const [activeTab, setActiveTab] = useState("All Projects");
 
   return (
-    <div className=" mx-auto py-16 px-2 sm:px-6 lg:px-16 md:px-16">
+    <div className="mx-auto py-8 px-4 sm:px-6 lg:px-16 md:px-12">
       {/* Heading */}
-      <div className="text-center mb-8">
-        <p className="text-blue-600 uppercase font-semibold">Our Work</p>
-        <h2 className="text-3xl font-bold text-gray-800">
+      <div className="text-center mb-6 sm:mb-8">
+        <p className="text-blue-600 uppercase font-semibold text-sm sm:text-base">
+          Our Work
+        </p>
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
           Explore Our Latest Projects
         </h2>
-        <p className="text-gray-500 mt-2">
+        <p className="text-gray-500 mt-2 text-sm sm:text-base max-w-md sm:max-w-lg mx-auto">
           Turn your ideas into impactful solutions like them!
         </p>
       </div>
 
       {/* Tabs */}
-      <div className="flex flex-wrap justify-center gap-3 mb-10 ">
-        <div className="border-2 p-1 flex gap-3 border-gray-400 rounded-lg ">
-        {tabs.map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`px-4 py-2 rounded-md  text-sm font-medium ${
-              activeTab === tab
-                ? "bg-blue-600 text-white"
-                : "border-gray-300 text-gray-600 hover:bg-gray-100"
-            }`}
-          >
-            {tab}
-          </button>
-        ))}
+      <div className="flex flex-wrap justify-center gap-2 mb-6 sm:mb-10">
+        <div className="border-2 p-1 flex flex-wrap gap-2 border-gray-400 rounded-lg">
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`px-3 sm:px-4 py-1 sm:py-2 rounded-md text-xs sm:text-sm font-medium ${
+                activeTab === tab
+                  ? "bg-blue-600 text-white"
+                  : "border-gray-300 text-gray-600 hover:bg-gray-100"
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
         </div>
-       
       </div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {projects.map((project) => (
           <div
             key={project.id}
-            className="bg-white rounded-lg overflow-hidden shadow-md"
+            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
           >
-            <div className="relative w-full  h-80">
+            <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-80">
               <Image
                 src={project.image}
                 alt={project.title}
@@ -93,18 +94,21 @@ export default function OurWork() {
                 className="object-cover"
               />
             </div>
-            <div className="p-4">
-              <div className="flex justify-between items-center mb-1">
-                <h3 className="font-semibold text-gray-800 text-base">
+            <div className="p-3 sm:p-4">
+              <div className="flex justify-between items-center mb-1 sm:mb-2">
+                <h3 className="font-semibold text-gray-800 text-sm sm:text-base">
                   {project.title}
                 </h3>
-                <p className="text-blue-600 font-bold text-sm">
+                <p className="text-blue-600 font-bold text-xs sm:text-sm">
                   {project.price}
                 </p>
               </div>
-              <div className="text-xs text-gray-400 flex flex-wrap gap-1">
+              <div className="text-xs sm:text-sm text-gray-400 flex flex-wrap gap-1">
                 {project.categories.map((cat, index) => (
-                  <span key={index} className="after:content-['•'] last:after:hidden">
+                  <span
+                    key={index}
+                    className="after:content-['•'] last:after:hidden"
+                  >
                     {cat}
                   </span>
                 ))}

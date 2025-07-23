@@ -10,6 +10,9 @@ export default function NavBar() {
           <Link href={'/'}>Home</Link>
         </li>
         <li>
+          <Link href={'/brands'}>Brands</Link>
+        </li>
+        <li>
           {/* <details>
             <summary>Services</summary>
             <ul className="p-2">
@@ -24,13 +27,17 @@ export default function NavBar() {
             <Link href={'/services'}>Services</Link>
         </li>
         <li>
-          <Link href={'/blogs'}>Blogs</Link>
+          <Link href={'/products'}>Products</Link>
         </li>
+        <li>
+          <Link href={'/price'}>Pricing</Link>
+        </li>
+        
         <li>
           <Link href={'/about'}>About</Link>
         </li>
         <li>
-          <Link href={'/contacts'}>Contacts</Link>
+          <Link href={'/blogs'}>Blogs</Link>
         </li>
       </>
     );
@@ -73,7 +80,7 @@ export default function NavBar() {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn text-white  bg-blue-700 ">Contact Us</a>
+        <Link href={"/contact"} className="btn text-white  bg-blue-700 ">Contact Us</Link>
       </div>
     </div>
   );
